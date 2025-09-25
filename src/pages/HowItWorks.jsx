@@ -20,7 +20,7 @@ const TIMELINE = [
     description: (
       <>
         We capture WPM, accuracy, goals met, and at-home prompts tailored to your child's age and energy.{' '}
-        <a href="/roadmap.pdf" target="_blank" rel="noopener">
+        <a href={`${import.meta.env.BASE_URL}roadmap.pdf`} target="_blank" rel="noopener noreferrer">
           Track growth with our 12-Week Progress Roadmap.
         </a>
       </>
@@ -39,6 +39,12 @@ const HowItWorks = () => {
   usePageMetadata({
     title: "How It Works | Serenity's Keys",
     description: "Book, launch, learn, and receive a progress summary - even for brand-new typists starting at age 3.",
+    openGraph: {
+      title: "How It Works | Serenity's Keys",
+      description: "What happens after you press Book a Class.",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   return (
@@ -70,9 +76,9 @@ const HowItWorks = () => {
               When class starts, your child opens Launchpad. It displays the Meet link, their Typing.com assignment, and coach notes. If they get disconnected, the same link brings them back instantly.
             </p>
             <div className="launchpad-gallery">
-              <img src="/images/launchpad-1.png" alt="Launchpad showing Meet link, Typing.com, and coach notes" />
-              <img src="/images/launchpad-2.png" alt="Launchpad assignment list placeholder" />
-              <img src="/images/launchpad-3.png" alt="Example progress email preview" />
+              <img src={`${import.meta.env.BASE_URL}images/launchpad-1.png`} alt="Launchpad showing Meet link, Typing.com, and coach notes" width="960" height="540" />
+              <img src={`${import.meta.env.BASE_URL}images/launchpad-2.png`} alt="Launchpad assignment list placeholder" width="960" height="540" />
+              <img src={`${import.meta.env.BASE_URL}images/launchpad-3.png`} alt="Example progress email preview" width="960" height="540" />
             </div>
             <a className="btn btn-secondary" href={`${BOOKING_BASE_URL}/launchpad`}>
               Preview the Launchpad

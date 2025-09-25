@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Hero from "../components/Hero";
 import FeatureRow from "../components/FeatureRow";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -89,7 +89,8 @@ const Home = () => {
       "Live Google Meet typing classes starting at age 3. Nurturing coaches, Stripe checkout, and progress emails parents trust.",
     openGraph: {
       title: "Live typing classes kids love. Progress parents can see.",
-      description: "Serenity's Keys blends Typing.com adventures with warm coaching for ages 3 and up.",
+      description: "Serenity's Keys blends Typing.com adventures with warm coaching for ages 3 and up.
+",
       image: `${import.meta.env.BASE_URL}og-image.png`,
       url: `https://geo222222.github.io/serenitys-keys-landing/`,
     },
@@ -242,5 +243,4 @@ const Home = () => {
 };
 
 export default Home;
-
 

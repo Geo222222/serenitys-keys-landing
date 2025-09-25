@@ -1,5 +1,6 @@
 import React from "react";
-import { BOOKING_BASE_URL } from "../config";
+import { BOOKING_BASE_URL, BOOKING_CONFIGURED } from "../config";
+import { Link } from "react-router-dom";
 
 const Hero = () => (
   <section className="hero">
@@ -12,12 +13,18 @@ const Hero = () => (
           Small groups on Google Meet. Friendly coach. Typing.com missions matched to your child's age. A short progress note after every class.
         </p>
         <div className="hero-actions">
-          <a className="btn btn-primary" href={`${BOOKING_BASE_URL}/programs`}>
-            See age 3+ programs
-          </a>
-          <a className="btn btn-secondary" href="/how-it-works">
+          {BOOKING_CONFIGURED ? (
+            <a className="btn btn-primary" href={`${BOOKING_BASE_URL}/programs`}>
+              See age 3+ programs
+            </a>
+          ) : (
+            <Link className="btn btn-primary" to="/programs" aria-disabled>
+              See age 3+ programs
+            </Link>
+          )}
+          <Link className="btn btn-secondary" to="/how-it-works">
             How it works (2 min)
-          </a>
+          </Link>
         </div>
       </div>
       <div className="hero-visual">

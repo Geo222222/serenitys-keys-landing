@@ -47,6 +47,15 @@ a:hover {
   color: var(--color-primary);
 }
 
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -130,6 +139,18 @@ section {
 .btn-secondary:hover {
   background: rgba(39, 67, 255, 0.18);
   transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .badge {

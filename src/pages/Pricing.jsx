@@ -1,7 +1,7 @@
 import React from "react";
 import CTASection from "../components/CTASection";
 import { usePageMetadata } from "../hooks/usePageMetadata";
-import { BOOKING_BASE_URL } from "../config";
+import { BOOKING_BASE_URL, BOOKING_CONFIGURED } from "../config";
 
 const PLANS = [
   {
@@ -52,6 +52,12 @@ const Pricing = () => {
   usePageMetadata({
     title: "Pricing | Serenity's Keys",
     description: "Group typing classes from $35 and private coaching from $65. Every session comes with a detailed progress email.",
+    openGraph: {
+      title: "Pricing | Serenity's Keys",
+      description: "Group typing classes from $35 and private coaching from $65.",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   return (
@@ -64,7 +70,9 @@ const Pricing = () => {
             Every plan includes Launchpad access, Typing.com alignment, and post-class progress reports for parents. Stripe checkout and automated calendar invites will roll out shortly - reserve now and we will confirm within 24 hours.
           </p>
           <div className="table-pricing">
-            {PLANS.map((plan) => (
+            {PLANS.map((plan) => {
+              const href = BOOKING_CONFIGURED ? plan.link : "/programs";
+              return (
               <div key={plan.name} className="pricing-card">
                 <div className="badge">{plan.cadence}</div>
                 <h3 style={{ margin: "8px 0" }}>{plan.name}</h3>
@@ -76,11 +84,11 @@ const Pricing = () => {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                <a className="btn btn-primary" href={plan.link}>
+                <a className="btn btn-primary" href={href}>
                   Book this option
                 </a>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>

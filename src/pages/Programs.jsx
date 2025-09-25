@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ProgramCard from "../components/ProgramCard";
 import FAQ from "../components/FAQ";
 import { usePageMetadata } from "../hooks/usePageMetadata";
@@ -14,7 +14,7 @@ const PROGRAMS = [
   },
   {
     course: "group:6-8",
-  title: "Key Explorers (Ages 6–8)",
+  title: "Key Explorers (Ages 6-8)",
     description: "Home-row mastery with games, accuracy focus, and a calm pace.",
     details: ["45-minute class", "Max 4 learners", "Teacher-led warm-up"],
     benchmarks: ["Typical: +3 WPM per month", "Target: 90-95% accuracy by Week 8"],
@@ -22,7 +22,7 @@ const PROGRAMS = [
   },
   {
     course: "group:9-11",
-  title: "Home Row Heroes (Ages 9–11)",
+  title: "Home Row Heroes (Ages 9-11)",
     description: "Speed building with strong accuracy - perfect for school projects.",
     details: ["45-minute class", "Max 5 learners", "Weekly goal tracking"],
     benchmarks: ["Typical: +4 WPM per month", "Target: 95% accuracy on sentences"],
@@ -30,7 +30,7 @@ const PROGRAMS = [
   },
   {
     course: "group:12-14",
-  title: "Future Coders (Ages 12–14)",
+  title: "Future Coders (Ages 12-14)",
     description: "Fluency for school, coding, and competitive typing challenges.",
     details: ["45-minute class", "Max 5 learners", "Mentor feedback"],
     benchmarks: ["Typical: +5 WPM per month", "Target: 98% accuracy on projects"],
@@ -50,6 +50,12 @@ const Programs = () => {
   usePageMetadata({
     title: "Programs | Serenity's Keys",
     description: "Find the right typing class - starting at age 3 with sensory-friendly micro sessions through teen fluency coaching.",
+    openGraph: {
+      title: "Programs | Serenity's Keys",
+      description: "Choose the typing experience that fits your learner.",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   return (
@@ -62,7 +68,12 @@ const Programs = () => {
             Every program meets live on Google Meet, taps Typing.com for guided drills, and ends with a progress summary emailed to you. Stripe checkout and Google Calendar invites are rolling out now for a seamless sign-up.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-secondary" href="/roadmap.pdf" target="_blank" rel="noopener">
+            <a
+              className="btn btn-secondary"
+              href={`${import.meta.env.BASE_URL}roadmap.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View 12-Week Progress Roadmap (PDF)
             </a>
           </div>
@@ -79,3 +90,5 @@ const Programs = () => {
 };
 
 export default Programs;
+
+

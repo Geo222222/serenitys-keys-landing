@@ -56,8 +56,10 @@ export const usePageMetadata = ({ title, description, openGraph }: MetadataOptio
 
     if (openGraph?.url) {
       ensureMetaTag('meta[property="og:url"]', "content", openGraph.url);
+    } else if (typeof window !== 'undefined') {
+      ensureMetaTag('meta[property="og:url"]', "content", window.location.href);
     }
 
-    ensureMetaTag('meta[property="og:type"]', "content", openGraph?.url ? "website" : "article");
+    ensureMetaTag('meta[property="og:type"]', "content", "website");
   }, [title, description, openGraph?.title, openGraph?.description, openGraph?.image, openGraph?.url]);
 };

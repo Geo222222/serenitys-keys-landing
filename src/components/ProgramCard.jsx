@@ -1,5 +1,6 @@
 import React from "react";
-import { BOOKING_BASE_URL } from "../config";
+import { BOOKING_BASE_URL, BOOKING_CONFIGURED } from "../config";
+import { Link } from "react-router-dom";
 
 const ProgramCard = ({ course, title, description, details, outcomes, benchmarks = [] }) => (
   <div
@@ -37,12 +38,18 @@ const ProgramCard = ({ course, title, description, details, outcomes, benchmarks
         ))}
       </ul>
     </div>
-    <a
-      className="btn btn-primary"
-      href={`${BOOKING_BASE_URL}/programs?course=${encodeURIComponent(course)}`}
-    >
-      View Availability
-    </a>
+    {BOOKING_CONFIGURED ? (
+      <a
+        className="btn btn-primary"
+        href={`${BOOKING_BASE_URL}/programs?course=${encodeURIComponent(course)}`}
+      >
+        View Availability
+      </a>
+    ) : (
+      <Link className="btn btn-primary" to="/pricing">
+        View Availability
+      </Link>
+    )}
   </div>
 );
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { usePageMetadata } from "../hooks/usePageMetadata";
 import { BOOKING_BASE_URL } from "../config";
+import { Link } from "react-router-dom";
 import EarlyStartHighlights from "../components/EarlyStartHighlights";
 
 const REASONS = [
@@ -65,6 +66,12 @@ const WhyTyping = () => {
     title: "Why Typing Early Matters | Serenity's Keys",
     description:
       "Discover the research behind age 3+ typing lessons, how motor skills form, and why early practice keeps kids confident on computers.",
+    openGraph: {
+      title: "Why Typing Early Matters | Serenity's Keys",
+      description: "Typing early supports language, focus & planning skills, and confidence.",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   return (
@@ -144,12 +151,10 @@ const WhyTyping = () => {
             <a className="btn btn-primary" href={`${BOOKING_BASE_URL}/programs`}>
               Browse programs
             </a>
-            <a className="btn btn-secondary" href="/roadmap.pdf" target="_blank" rel="noopener">
+            <a className="btn btn-secondary" href={`${import.meta.env.BASE_URL}roadmap.pdf`} target="_blank" rel="noopener noreferrer">
               See the 12-Week Roadmap
             </a>
-            <a className="btn btn-secondary" href="/contact">
-              Talk to a coach
-            </a>
+            <Link className="btn btn-secondary" to="/contact">Talk to a coach</Link>
           </div>
         </div>
       </section>
@@ -158,5 +163,3 @@ const WhyTyping = () => {
 };
 
 export default WhyTyping;
-
-

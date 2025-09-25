@@ -13,3 +13,5 @@ export const ROUTES = {
 export const ANALYTICS = {
   enablePlausible: false,
 };
+
+export const BOOKING_CONFIGURED = /^https?:/i.test(BOOKING_BASE_URL);

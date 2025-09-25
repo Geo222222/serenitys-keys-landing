@@ -1,7 +1,6 @@
-﻿import React from "react";
-import { BOOKING_BASE_URL, BOOKING_CONFIGURED } from "../config";
+import React from "react";
+import { BOOKING_BASE_URL } from "../config";
 import logoMark from "../assets/serenity-keys-logo.png";
-import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -26,15 +25,9 @@ const SharedFooter = () => (
           </div>
         </div>
         <div style={{ marginTop: "16px", display: "flex", gap: "12px" }}>
-          {BOOKING_CONFIGURED ? (
-            <a className="btn btn-secondary" href={`${BOOKING_BASE_URL}/programs`}>
-              Book a Class
-            </a>
-          ) : (
-            <Link className="btn btn-secondary" to="/programs" aria-disabled>
-              Book a Class
-            </Link>
-          )}
+          <a className="btn btn-secondary" href={`${BOOKING_BASE_URL}/programs`}>
+            Book a Class
+          </a>
         </div>
       </div>
       <div className="footer-column">
@@ -42,7 +35,7 @@ const SharedFooter = () => (
         <ul>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link to={link.href}>{link.label}</Link>
+              <a href={link.href}>{link.label}</a>
             </li>
           ))}
         </ul>
@@ -51,10 +44,10 @@ const SharedFooter = () => (
         <h4>Resources</h4>
         <ul>
           <li>
-            <Link to="/policies">Policies &amp; Privacy</Link>
+            <a href="/policies">Policies &amp; Privacy</a>
           </li>
           <li>
-            <Link to="/why-typing#research">Research &amp; benefits</Link>
+            <a href="/why-typing#research">Research &amp; benefits</a>
           </li>
           <li>
             <a href={`${BOOKING_BASE_URL}/launchpad`}>Launchpad</a>
@@ -73,14 +66,10 @@ const SharedFooter = () => (
     </div>
     <div className="container footer-bottom">
       <span>&copy; {new Date().getFullYear()} Serenity's Keys. All rights reserved.</span>
-      <span>Powered by Google Meet - Typing.com - Stripe</span>
+      <span>Powered by Google Meet � Typing.com � Stripe</span>
     </div>
   </footer>
 );
 
 export default SharedFooter;
-
-
-
-
 

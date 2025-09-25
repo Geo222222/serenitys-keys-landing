@@ -5,6 +5,12 @@ const Policies = () => {
   usePageMetadata({
     title: "Policies & Privacy | Serenity's Keys",
     description: "Refunds, cancellations, and privacy guidelines for Serenity's Keys typing classes.",
+    openGraph: {
+      title: "Policies & Privacy | Serenity's Keys",
+      description: "Plain-English policies for families.",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   return (

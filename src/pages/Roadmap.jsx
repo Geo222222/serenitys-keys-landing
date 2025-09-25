@@ -1,11 +1,18 @@
 import React from "react";
 import { usePageMetadata } from "../hooks/usePageMetadata";
 import { BOOKING_BASE_URL } from "../config";
+import { Link } from "react-router-dom";
 
 const Roadmap = () => {
   usePageMetadata({
     title: "12-Week Progress Roadmap | Serenity's Keys",
     description: "Download the 12-week typing roadmap families use to track WPM, accuracy, and focus skills at home.",
+    openGraph: {
+      title: "12-Week Progress Roadmap | Serenity's Keys",
+      description: "Milestones families use to track progress.",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   return (
@@ -18,15 +25,13 @@ const Roadmap = () => {
             Follow the week-by-week milestones we share with families. Download the PDF to keep practice aligned between classes.
           </p>
           <div className="hero-actions" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a className="btn btn-primary" href="/roadmap.pdf" target="_blank" rel="noopener">
+            <a className="btn btn-primary" href={`${import.meta.env.BASE_URL}roadmap.pdf`} target="_blank" rel="noopener noreferrer">
               Download the PDF
             </a>
             <a className="btn btn-secondary" href={`${BOOKING_BASE_URL}/programs`}>
               Browse programs
             </a>
-            <a className="btn btn-tertiary" href="/try-typing">
-              Try the Typing Playground
-            </a>
+            <Link className="btn btn-tertiary" to="/try-typing">Try the Typing Playground</Link>
           </div>
           <div
             className="card"
@@ -46,7 +51,7 @@ const Roadmap = () => {
             </ul>
           </div>
           <iframe
-            src="/roadmap.pdf"
+            src={`${import.meta.env.BASE_URL}roadmap.pdf`}
             style={{ width: "100%", height: "800px", border: "none", marginTop: "32px" }}
             title="12-Week Roadmap"
           />

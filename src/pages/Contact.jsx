@@ -13,6 +13,12 @@ const Contact = () => {
   usePageMetadata({
     title: "Contact Us | Serenity's Keys",
     description: "Reach the Serenity's Keys team for enrollment questions, scholarships, or AI Mentor updates.",
+    openGraph: {
+      title: "Contact Us | Serenity's Keys",
+      description: "Questions about enrollment or scholarships?",
+      image: `${import.meta.env.BASE_URL}og-image.png`,
+      url: `https://geo222222.github.io/serenitys-keys-landing/`,
+    },
   });
 
   const [form, setForm] = useState(INITIAL_FORM);

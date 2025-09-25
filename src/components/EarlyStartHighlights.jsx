@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HIGHLIGHTS = [
   {
@@ -53,9 +54,9 @@ const EarlyStartHighlights = () => (
         ))}
       </div>
       <div className="hero-actions" style={{ marginTop: "32px" }}>
-        <a className="btn btn-secondary" href="/why-typing">
+        <Link className="btn btn-secondary" to="/why-typing">
           Dive deeper into benefits
-        </a>
+        </Link>
       </div>
     </div>
   </section>
